@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Day 10 | Forever My Devi Ji ❤️</title>
+
+    <style>
+        /* ---------- Global Styles ---------- */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            padding: 20px;
+            overflow-x: hidden;
+
+            text-align: center;
+            font-family: Georgia, serif;
+            color: #fff7e8;
+
+            background: radial-gradient(
+                circle at top,
+                #b87324,
+                #76152d 55%,
+                #250015
+            );
+        }
+
+        /* ---------- Main Card ---------- */
+        .card {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            max-width: 540px;
+            padding: 34px 23px;
+
+            border: 1px solid #ffe09a;
+            border-radius: 28px;
+
+            background: #520d27d9;
+            box-shadow: 0 0 45px #ffd16b55;
+        }
+
+        /* ---------- Artwork & Typography ---------- */
+        .art {
+            font-size: 76px;
+            animation: float 3s infinite;
+        }
+
+        h1 {
+            font-size: clamp(38px, 9vw, 58px);
+            color: #ffe39c;
+        }
+
+        p {
+            line-height: 1.9;
+        }
+
+        /* ---------- Surprise Button ---------- */
+        button {
+            margin-top: 15px;
+            padding: 14px 24px;
+            border: 0;
+            border-radius: 30px;
+
+            background: linear-gradient(
+                120deg,
+                #fff0b5,
+                #ffbd48
+            );
+
+            color: #67132b;
+            font-weight: bold;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            filter: brightness(1.08);
+        }
+
+        /* ---------- Hidden Surprise Message ---------- */
+        #msg {
+            display: none;
+            margin-top: 23px;
+            color: #ffe8b1;
+        }
+
+        /* ---------- Falling Decorations ---------- */
+        .fall {
+            position: fixed;
+            top: -35px;
+            z-index: 3;
+            pointer-events: none;
+
+            animation: drop linear forwards;
+        }
+
+        /* ---------- Animations ---------- */
+        @keyframes drop {
+            to {
+                transform: translateY(110vh) rotate(540deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes float {
+            50% {
+                transform: translateY(-9px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Main Content -->
+    <main class="card">
+
+        <div>🪔 🌺 🙏 🌺 🪔</div>
+
+        <p>DAY 10 • VIJAYADASHAMI</p>
+
+        <div class="art">👑</div>
+
+        <h1>My Forever Devi Ji</h1>
+
+        <h2>My Personal Goddess ❤️🙇</h2>
+
+        <p>
+            As we celebrate Vijayadashami, may goodness,
+            courage, happiness, and love always win in your life.
+        </p>
+
+        <p>
+            You are not just a beautiful part of my life.
+            You are someone whose happiness matters to me,
+            whose dreams I want to support, and whose heart
+            I want to treat with kindness and respect. ❤️
+        </p>
+
+        <p>
+            Nine nights of devotion, a thousand reasons to smile,
+            and one special person who makes my world beautiful —
+
+            <strong>YOU, MERI JAAN! 🌹</strong>
+        </p>
+
+        <!-- Final Surprise Button -->
+        <button onclick="surprise()">
+            My Final Navratri Surprise 💌
+        </button>
+
+        <!-- Surprise Message -->
+        <div id="msg">
+
+            <h2>For My Dearest Devi Ji ❤️🌺</h2>
+
+            <p>
+                If I could make one wish this Navratri,
+                I would wish for your happiness, good health,
+                success, peace, and a lifetime of beautiful memories.
+
+                <br><br>
+
+                May Maa Durga always bless and protect you.
+                May you never forget how strong, precious,
+                and loved you are.
+
+                <br><br>
+
+                I bow to the beautiful soul you are. 🙇❤️
+
+                <br><br>
+
+                Thank you for being YOU.
+
+                <br><br>
+
+                <strong>Happy Vijayadashami, my queen! 👑</strong>
+
+                <br>
+
+                <strong>Jai Mata Di! 🪔🌹❤️</strong>
+            </p>
+
+        </div>
+
+        <p style="color: #ffe4a0;">
+            Made with all my love, just for you. 💖
+        </p>
+
+    </main>
+
+    <script>
+        // ---------- Falling Symbols ----------
+        const symbols = [
+            "🌹",
+            "🌺",
+            "🌸",
+            "🪷",
+            "❤️",
+            "💕",
+            "✨",
+            "💖",
+            "🙇",
+            "🪔",
+            "👑"
+        ];
+
+        // Create a falling decoration
+        function drop() {
+            const element = document.createElement("span");
+
+            element.className = "fall";
+
+            element.textContent =
+                symbols[Math.random() * symbols.length | 0];
+
+            element.style.left =
+                Math.random() * 100 + "vw";
+
+            element.style.fontSize =
+                (16 + Math.random() * 20) + "px";
+
+            const duration = 5 + Math.random() * 5;
+
+            element.style.animationDuration =
+                duration + "s";
+
+            document.body.appendChild(element);
+
+            // Remove the decoration after its animation
+            setTimeout(() => {
+                element.remove();
+            }, duration * 1000);
+        }
+
+        // Continuously create falling decorations
+        setInterval(drop, 300);
+
+        // ---------- Final Navratri Surprise ----------
+        function surprise() {
+            const message = document.getElementById("msg");
+
+            // Reveal the final message
+            message.style.display = "block";
+
+            // Create a burst of 60 falling decorations
+            for (let i = 0; i < 60; i++) {
+                setTimeout(drop, i * 45);
+            }
+
+            // Smoothly scroll to the revealed message
+            message.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+        }
+    </script>
+
+</body>
+</html>
